@@ -1,1 +1,19 @@
-note because this is in a monorepo had to remove react, react-dom, and react-native-web deps and change metro.config.js a bit.
+### Weather App
+
+## React Native
+[expo.js](https://docs.expo.dev/)
+
+## UI
+[tamagui](https://tamagui.dev/)
+
+## Data
+[apple-weatherkit](https://developer.apple.com/documentation/weatherkit/)
+
+## Hosting
+
+### Web
+[firebase hosting](https://firebase.google.com/docs/hosting)
+
+### Functions
+[firebase cloud functions](https://firebase.google.com/docs/functions)
+
