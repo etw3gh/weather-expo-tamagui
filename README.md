@@ -15,5 +15,9 @@
 [firebase hosting](https://firebase.google.com/docs/hosting)
 
 ### Functions
+
+[repo](https://github.com/etw3gh/weather-firebase)
+
 [firebase cloud functions](https://firebase.google.com/docs/functions)
+
 
