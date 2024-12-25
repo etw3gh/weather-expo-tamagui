@@ -19,9 +19,13 @@ export function CurrentToast() {
       animation="quick"
     >
       <YStack ai="center" p="$2" gap="$2">
-        <Toast.Title fow="bold">{currentToast.title}</Toast.Title>
+        <Toast.Title fow="bold">
+          {currentToast.title}
+        </Toast.Title>
         {!!currentToast.message && (
-          <Toast.Description>{currentToast.message}</Toast.Description>
+          <Toast.Description>
+            {currentToast.message}
+          </Toast.Description>
         )}
       </YStack>
     </Toast>
