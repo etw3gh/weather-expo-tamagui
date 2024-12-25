@@ -1,4 +1,9 @@
 ### Weather App
+[web demo](https://weather-et.web.app/)
+
+todo android
+
+todo ios
 
 ## React Native
 [expo.js](https://docs.expo.dev/)
