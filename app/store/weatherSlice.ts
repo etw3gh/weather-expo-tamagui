@@ -46,7 +46,7 @@ export const getWeather: any = createAsyncThunk (
     try {
       const resp = await fetch(url)
       const data = await resp.json()
-      console.log('data', data)
+
       return data
     } catch (e) {
       console.log(e)
@@ -62,7 +62,6 @@ const weatherSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getWeather.fulfilled, (state, action) => {
-        console.log(action)
         const {
           keys,
           currentWeather,
