@@ -32,9 +32,15 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const isLocalWeb = isDev && Platform.OS === 'web'
 
-const suffix = 'us-central1/weather'
+let suffix = 'us-central1/weather'
 
-const weatherService = isLocalWeb ? localService : prodService
+const isMobile = Platform.OS !== 'web'
+
+if (isMobile) {
+  suffix += '_mobile'
+}
+
+let weatherService = isLocalWeb ? localService : prodService
 
 export const getWeather: any = createAsyncThunk (
   'weather/getWeather',

@@ -21,9 +21,13 @@ export default function TabTwoScreen() {
 
   return (
     <View flex={1} alignItems="center" justifyContent="center" bg="$background">
-      <Text fontSize={20} color="$blue10">
-        Tab Two
-      </Text>
+        {
+          weather.keys ? (
+            <Text fontSize={20} color="$blue10">
+              {weather.keys.join(', ')}
+            </Text>
+          ): null
+        }
     </View>
   )
 }
