@@ -25,7 +25,7 @@ const initialState: WeatherSliceState = {
 
 let weatherService 
 
-// these must not be destructured https://docs.expo.dev/guides/environment-variables/
+// process.env must not be destructured for expo https://docs.expo.dev/guides/environment-variables/
 const localService = process.env.EXPO_PUBLIC_LOCAL_WEATHER_SERVICE
 
 const localPreferProd = process.env.EXPO_PUBLIC_WEATHER_SERVICE_PREFER_PROD === '1'
