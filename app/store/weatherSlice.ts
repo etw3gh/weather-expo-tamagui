@@ -23,8 +23,12 @@ const initialState: WeatherSliceState = {
   forecastHourly: null,
 }
 
+let weatherService 
+
 // these must not be destructured https://docs.expo.dev/guides/environment-variables/
 const localService = process.env.EXPO_PUBLIC_LOCAL_WEATHER_SERVICE
+
+const localPreferProd = process.env.EXPO_PUBLIC_WEATHER_SERVICE_PREFER_PROD === '1'
 
 const prodService = process.env.EXPO_PUBLIC_WEATHER_SERVICE
 
@@ -34,13 +38,15 @@ const isLocalWeb = isDev && Platform.OS === 'web'
 
 let suffix = 'us-central1/weather'
 
-const isMobile = Platform.OS !== 'web'
-
-if (isMobile) {
+if (Platform.OS !== 'web') {
   suffix += '_mobile'
 }
 
-let weatherService = isLocalWeb ? localService : prodService
+if (localPreferProd) {
+  weatherService = prodService
+} else {
+  weatherService = isLocalWeb ? localService : prodService
+}
 
 export const getWeather: any = createAsyncThunk (
   'weather/getWeather',
